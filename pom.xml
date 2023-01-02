@@ -80,11 +80,6 @@
                     <target>1.8</target>
                     <encoding>utf-8</encoding>
                 </configuration>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                    </execution>
-                </executions>
             </plugin>
 
         </plugins>
