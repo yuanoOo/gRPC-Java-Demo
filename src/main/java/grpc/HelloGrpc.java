@@ -79,8 +79,7 @@ public final class HelloGrpc {
     /**
      * Creates a new blocking-style stub that supports unary and streaming output calls on the service
      */
-    public static HelloBlockingStub newBlockingStub(
-            io.grpc.Channel channel) {
+    public static HelloBlockingStub newBlockingStub(io.grpc.Channel channel) {
         io.grpc.stub.AbstractStub.StubFactory<HelloBlockingStub> factory =
                 new io.grpc.stub.AbstractStub.StubFactory<HelloBlockingStub>() {
                     @java.lang.Override

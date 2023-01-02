@@ -34,13 +34,21 @@ public class ClientDemo {
      */
     public void remoteCall(String name) {
 
-        HelloMessage.HelloRequest request = HelloMessage.HelloRequest.newBuilder().setName(name).build();
+        HelloMessage.HelloRequest request = HelloMessage
+                .HelloRequest
+                .newBuilder()
+                .setName(name)
+                .build();
+
         HelloMessage.HelloResponse response;
 
         try {
 
             // 基于访问地址 创建通道
-            Channel channel =  ManagedChannelBuilder.forAddress("localhost", 50051).usePlaintext().build();
+            Channel channel =  ManagedChannelBuilder
+                    .forAddress("localhost", 50051)
+                    .usePlaintext()
+                    .build();
 
             // 利用通道 创建一个桩（Stub）对象
             HelloGrpc.HelloBlockingStub blockingStub = HelloGrpc.newBlockingStub(channel);

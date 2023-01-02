@@ -75,7 +75,7 @@ public class ServerDemo {
             HelloMessage.HelloResponse reply = HelloMessage
                     .HelloResponse
                     .newBuilder()
-                    .setMessage("(server端的sayHello()方法处理结果) Hello," + req.getName())
+                    .setMessage("sayHello() has been invoked..., and client request pram is: " + req.getName())
                     .build();
 
 
