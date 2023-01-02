@@ -32,7 +32,10 @@
         </dependency>
     </dependencies>
 
+    <!--maven项目构建部分-->
     <build>
+
+        <!--拓展-->
         <extensions>
             <extension>
                 <groupId>kr.motd.maven</groupId>
@@ -40,7 +43,13 @@
                 <version>1.6.2</version>
             </extension>
         </extensions>
+
+        <!-- 对于maven进行项目构建时，我们会使用到插件，-->
+        <!-- 对构建过程进行一些控制，加工，加密，重写，依赖打包等工作，-->
+        <!-- 一般我们打包时会把phase定为package，意思是说，当进行package动作后，处理你的插件。-->
         <plugins>
+
+
             <plugin>
                 <groupId>org.xolstice.maven.plugins</groupId>
                 <artifactId>protobuf-maven-plugin</artifactId>
@@ -52,6 +61,8 @@
                 </configuration>
                 <executions>
                     <execution>
+                        <!-- 定义插件再package阶段执行 -->
+                        <phase>package</phase>
                         <goals>
                             <goal>compile</goal>
                             <goal>compile-custom</goal>
@@ -69,6 +80,11 @@
                     <target>1.8</target>
                     <encoding>utf-8</encoding>
                 </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
             </plugin>
 
         </plugins>
