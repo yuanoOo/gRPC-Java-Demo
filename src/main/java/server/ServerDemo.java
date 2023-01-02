@@ -45,6 +45,8 @@ public class ServerDemo {
                 .build()
                 .start();
 
+        System.out.println(server.getPort());
+        server.getListenSockets().stream().forEach(x -> System.out.println(x.toString()));
     }
 
     /**
@@ -75,8 +77,11 @@ public class ServerDemo {
             HelloMessage.HelloResponse reply = HelloMessage
                     .HelloResponse
                     .newBuilder()
-                    .setMessage("sayHello() has been invoked..., and client request pram is: " + req.getName())
+                    .setMessage("message: 200")
                     .build();
+
+
+            System.out.println("sayHello() has been invoked..., and client request pram is: " + req.getName());
 
 
             // 调用onNext()方法来通知gRPC框架把reply 从server端 发送回 client端

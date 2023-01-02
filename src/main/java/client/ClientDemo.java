@@ -19,10 +19,8 @@ public class ClientDemo {
         ClientDemo clientDemo = new ClientDemo();
 
         try {
-
             //基于gRPC远程调用对应的方法
-            clientDemo.remoteCall("【zhongyuan】");
-
+            clientDemo.remoteCall("the pram of request is test");
         } finally {
 
         }
@@ -43,7 +41,6 @@ public class ClientDemo {
         HelloMessage.HelloResponse response;
 
         try {
-
             // 基于访问地址 创建通道
             Channel channel =  ManagedChannelBuilder
                     .forAddress("localhost", 50051)
@@ -53,6 +50,7 @@ public class ClientDemo {
             // 利用通道 创建一个桩（Stub）对象
             HelloGrpc.HelloBlockingStub blockingStub = HelloGrpc.newBlockingStub(channel);
 
+            System.out.println("client is requesting, the pram of request is : " + request.getName());
             //通过桩对象来调用远程方法
             response = blockingStub.sayHello(request);
 
@@ -60,7 +58,7 @@ public class ClientDemo {
             return;
         }
 
-        System.out.println("client端远程调用sayHello()的结果为：\n\n" + response.getMessage());
+        System.out.println("client request success, the result of response is: " + response.getMessage());
     }
 
 }
