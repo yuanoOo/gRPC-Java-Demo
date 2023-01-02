@@ -24,6 +24,14 @@
             <artifactId>grpc-stub</artifactId>
             <version>1.31.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.grpc/grpc-census -->
+        <!-- grpc的metrics跟踪收集框架-->
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-census</artifactId>
+            <version>1.31.1</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>annotations-api</artifactId>
